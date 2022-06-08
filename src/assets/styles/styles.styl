@@ -1,0 +1,435 @@
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+
+@import "./vars"
+
+h1, h2, h3, h4, a
+    font-family 'Fraunces', serif
+p, li, .sub-footer, .menu a
+    font-family 'Barlow', sans-serif
+    font-weight 600
+.menu
+    padding 1.5rem
+    display flex
+    flex-direction row
+    justify-content space-between
+    background-color #3EBFFF
+    position relative
+    @media screen and (min-width: 800px)
+        padding 2rem 3rem
+        align-items: center
+
+    .logo
+        width 10rem
+        @media screen and (min-width: 375px)
+            height 100%
+    nav 
+        .icon-menu
+            width 1.5rem
+            @media screen and (min-width: 800px)
+                display none
+
+        .menu-hamburger
+            display none
+            background $white
+            height auto
+            width 85vw
+            margin 0 1rem
+            position absolute
+            top 5.8rem
+            left 0
+            right 0
+            margin-left auto
+            margin-right auto
+            text-align center
+            padding 2rem 0 2.5rem
+            z-index 1
+            @media screen and (min-width: 800px)
+                display flex
+                padding 0 2rem
+                position relative
+                background transparent
+                width auto
+                top initial
+
+            &:after
+                content ''
+                width: 0;
+                height: 0;
+                position absolute
+                top -25px
+                right 0
+                border-style: solid;
+                border-width: 0 0 25px 30px;
+                border-color: transparent transparent $white transparent;
+                @media screen and (min-width: 800px)
+                    content none
+            li
+                list-style none
+                margin 0 0 1rem
+                padding .8rem 0
+                border-radius 5rem
+                &:last-child
+                    background-color $yellow
+                    width 35%
+                    margin auto
+                    @media screen and (min-width: 800px)
+                        margin-right 0
+                        background-color $white
+                        margin-left 1rem
+                        &:hover
+                            a
+                                color $white
+                    a
+                        font-family 'Fraunces', serif !important
+                        text-transform uppercase
+                        font-size 14px
+                        color $very-dark-desaturated-blue
+                        font-weight 900
+
+                @media screen and (min-width: 800px)
+                    margin 0 1rem
+                    padding 1rem 1.5rem
+                    &:hover
+                        background-color rgba($white, .2)
+
+                a
+                    text-decoration none
+                    color $dark-grayish-blue
+                    @media screen and (min-width: 800px)
+                        color $white
+
+.section
+    position relative
+    min-height 40vh
+    &-creatives
+        height 66vh
+        padding-top 2.5rem
+        background-image url('../img/mobile/image-header.jpg')
+        background-size cover
+        background-repeat no-repeat
+        background-position bottom
+        @media screen and (min-width: 800px)
+            padding-top 5rem
+        .title
+            text-transform uppercase
+            text-align center
+            font-size 2rem
+            color $white
+            letter-spacing 10px
+            font-weight 900
+            @media screen and (min-width: 800px)
+                font-size 3.5rem
+        .arrow-down
+            height 100%
+            width 100%
+            text-align center
+            padding 3rem 0 0
+            @media screen and (min-width: 800px)
+                margin 1rem 0 0
+        @media screen and (min-width: 760px)
+            height 90vh
+            background-image url('../img/desktop/image-header.jpg')
+    &-tranStans
+        text-align center
+        display flex
+        flex-direction column
+        flex-wrap: wrap
+        @media screen and (min-width: 800px)
+            flex-direction row
+
+            #transform
+                order 1
+            #egg
+                order 2
+            #stand
+                order 2
+            #cup
+                order 1
+        #stand .link .btn-more
+            &:before
+                transition all .5s ease-out
+                background-color rgba($soft-red, .3)
+            &:hover:before
+                background-color $soft-red
+        #transform .link .btn-more
+            &:before
+                transition all .5s ease-out
+                background-color rgba($yellow, .3)
+            &:hover:before
+                background-color $yellow
+        .wp-text
+            order 2
+            padding 4.5rem 0
+            height auto
+            @media screen and (min-width: 800px)
+                width 50%
+                padding 0 5rem
+                text-align left
+                display flex
+            .text-info
+                @media screen and (min-width: 800px)
+                    height auto
+                    width 68%
+                    margin auto
+                h2
+                    font-weight 900
+                    font-size 2rem
+                    width 85%
+                    margin auto
+                    padding-bottom 2.5rem
+                    color $very-dark-desaturated-blue
+                    @media screen and (min-width: 800px)
+                        width 100%
+                        font-size 2.2rem
+                        padding-bottom 2rem
+
+                p
+                    color $dark-grayish-blue
+                    width 85%
+                    margin auto
+                    line-height 1.8
+                    font-size 18px
+                    padding-bottom 2.5rem
+                    @media screen and (min-width: 800px)
+                        width 100%
+                        font-size 16px
+                        padding-bottom 2rem
+                .link 
+                    @media screen and (min-width: 800px)
+                        width 100%
+                        margin auto
+                    .btn-more
+                        font-size 18px
+                        color $very-dark-desaturated-blue
+                        text-transform uppercase
+                        font-weight 900
+                        text-decoration none
+                        position relative
+                        z-index 1
+                        &:before
+                            content ''
+                            width calc(100% + 16px)
+                            height 10px
+                            position absolute
+                            bottom -2px
+                            left: -6px;
+                            border-radius: 4px;
+                            z-index -1
+        .wp-img
+            height 40vh
+            order 1
+            @media screen and (min-width 480px) and (max-width: 800px)
+                height: 60vh;
+            @media screen and (min-width: 800px)
+                width 50%
+                height 70vh
+            img
+                width 100%
+                height 100%
+    &-fruits
+        display flex
+        flex-direction column
+        @media screen and (min-width: 1024px)
+            flex-direction row
+        &-cereza, &-orange
+            height 80vh
+            width 100%
+            background-size cover
+            background-repeat no-repeat
+            background-position top
+            position relative
+            .wp-text
+                position absolute
+                bottom 0
+                text-align center
+                padding 2rem 0 3rem
+                h2
+                    font-weight 900
+                    font-size 2rem
+                    padding 0 0 2rem
+                    @media screen and (min-width: 600px)
+                        font-size 1.8rem
+                p
+                    font-size 18px
+                    width 90%
+                    margin auto
+                    line-height 1.5
+                    @media screen and (min-width: 600px)
+                        font-size 16px
+                        width 50%
+        &-cereza
+            background-image url('../img/mobile/image-graphic-design.jpg')
+            color $dark-desaturated-cyan
+            @media screen and (min-width: 375px)
+                background-image url('../img/desktop/image-graphic-design.jpg')
+
+        &-orange
+            background-image url('../img/mobile/image-photography.jpg')
+            color $dark-blue
+            @media screen and (min-width: 375px)
+                background-image url('../img/desktop/image-photography.jpg')
+            .wp-text
+                p
+                    width 96%
+                    @media screen and (min-width: 600px)
+                        width 45%
+    &-testimonials
+        min-height 100vh
+        padding 3rem 0
+        text-align center
+
+        @media screen and (min-width: 800px)
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items center
+        
+        h3
+            color $grayish-blue
+            text-transform uppercase
+            letter-spacing 3px
+            padding 1rem 0 2rem
+            font-weight 900
+            @media screen and (min-width: 800px)
+                font-size 1.6rem
+                padding-bottom 3.5rem
+        
+        .wp-testimonials
+            display flex
+            flex-direction column
+            @media screen and (min-width: 800px)
+                flex-direction row
+                justify-content center
+        .testimonial
+            padding 2rem 0
+            @media screen and (min-width: 480px) and (max-height 800px)
+                width 50%
+                margin auto
+            @media screen and (min-width: 800px)
+                width 21%
+                margin 0 2rem
+
+            figure
+                height 90px
+                width 90px
+                border-radius 5rem
+                overflow hidden
+                margin auto
+                img
+                    width 100%
+                    height 100%
+            p
+                color $very-dark-grayish-blue
+                padding 2rem 0 1.5rem
+                font-size 20px
+                width 94%
+                margin auto
+                line-height 1.6
+                @media screen and (min-width: 800px)
+                    font-size 16px
+                    line-height 1.8
+                    width auto
+                    padding-bottom 4rem
+
+            .title-name
+                font-weight 900
+                color $very-dark-desaturated-blue
+                font-size 20px
+                letter-spacing 1px
+                text-transform capitalize
+                padding .5rem 0 0
+                margin 0
+                @media screen and (min-width: 800px)
+                    font-size 18px
+            
+            .carrer
+                color $grayish-blue
+                padding .5rem 0 1rem
+                font-size 16px
+                @media screen and (min-width: 800px)
+                    font-size 14px
+    &-wrap
+        display flex    
+        flex-wrap wrap
+        .picture
+            height 12.2rem
+            width 50%
+            overflow hidden
+            @media screen and (min-width: 800px)
+                width 25%
+                height 28rem
+            @media screen and (min-width: 1920px)
+                height 50em
+            img
+                width 100%
+                height 100%
+.footer
+    background-color #90D4C5
+    text-align center
+    padding 4rem 0 1rem
+    color $dark-moderate-cyan
+    @media screen and (min-width: 800px)
+        height fit-content
+        overflow hidden
+        padding 2rem 0 1rem
+    img
+        width 12rem
+        margin auto
+        margin-bottom 1rem
+        @media screen and (min-width: 375px)
+            width 10rem
+    nav
+        padding 2rem 0
+        @media screen and (min-width: 375px)
+            padding 1rem 0 2.5rem
+
+        ul
+            display flex
+            justify-content space-around
+            align-items center
+            @media screen and (min-width: 375px)
+                justify-content center
+
+            li
+                font-size 22px
+                font-weight bold
+                list-style none
+                cursor pointer
+                a
+                    font-family 'Barlow', sans-serif !important
+                    transition all .2s linear
+                    &:hover
+                        color $white
+                @media screen and (min-width: 375px)
+                    font-size 16px
+                    padding 0 2rem
+    .socials            
+        padding 4rem 0 3rem
+        @media screen and (min-width: 375px)
+            padding 2rem 0 1.5rem
+
+        ul
+            display flex
+            justify-content center
+            align-items center
+            li
+                list-style none
+                margin 0 1rem
+                cursor pointer
+                img
+                    width 20px
+                    transition all .2s linear
+                    &:hover
+                        filter: brightness(0) invert(1)
+    .sub-footer
+        margin 0 1rem
+        font-size 14px
+        a
+            color $dark-blue
+            text-decoration none
+            transition all .2s linear
+            &:hover
+                color $white
